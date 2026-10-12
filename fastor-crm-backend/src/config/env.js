@@ -19,7 +19,7 @@ const envSchema = z.object({
 
     JWT_EXPIRES_IN: z.string().default("1d"),
 
-    CLIENT_URL: import.meta.env.CLIENT_URL
+    CLIENT_URL: z.string().url("CLIENT_URL must be a valid URL"),
 });
 
 const parsed = envSchema.safeParse(process.env);
