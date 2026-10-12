@@ -5,7 +5,7 @@ import axios from "axios";
  * → http://localhost:5000 in development.
  * In production, replace BASE_URL with the real API origin.
  */
-const BASE_URL = "";
+const BASE_URL = import.meta.env.BASE_URL;
 
 /**
  * POST /v1/pwa/user/register
