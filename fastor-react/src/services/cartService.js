@@ -1,6 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from "../config/api";
 
-const BASE_URL = "";
+const BASE_URL = API_BASE_URL;
 
 /**
  * POST /v1/pwa/user/cart

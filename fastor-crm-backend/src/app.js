@@ -13,9 +13,25 @@ const app = express();
 app.disable("x-powered-by");
 app.use(helmet());
 
+const allowedOrigins = [
+    env.CLIENT_URL,
+    "https://fastor-app-tau.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:5174",
+];
+
 app.use(
     cors({
-        origin: env.CLIENT_URL,
+        origin: (origin, callback) => {
+            if (!origin) return callback(null, true);
+            if (
+                allowedOrigins.includes(origin) ||
+                origin.endsWith(".vercel.app")
+            ) {
+                return callback(null, true);
+            }
+            return callback(null, true);
+        },
         credentials: true,
     })
 );

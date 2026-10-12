@@ -1,11 +1,7 @@
 import axios from "axios";
+import { API_BASE_URL } from "../config/api";
 
-/**
- * All requests use relative URLs so they go through the Vite dev proxy
- * → http://localhost:5000 in development.
- * In production, replace BASE_URL with the real API origin.
- */
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = API_BASE_URL;
 
 /**
  * POST /v1/pwa/user/register
