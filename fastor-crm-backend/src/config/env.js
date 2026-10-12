@@ -19,7 +19,7 @@ const envSchema = z.object({
 
     JWT_EXPIRES_IN: z.string().default("1d"),
 
-    CLIENT_URL: z.string().url().default("http://localhost:5173"),
+    CLIENT_URL: import.meta.env.CLIENT_URL
 });
 
 const parsed = envSchema.safeParse(process.env);
